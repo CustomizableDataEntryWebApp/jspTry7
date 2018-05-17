@@ -7,9 +7,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CustomDataSearch</title>
+<link rel="stylesheet" type="text/css" href="FinalProjectStyling418.css">
+
+<title>Welcome to CustomSD</title>
 </head>
-<body>
+<body class = "body">
+<a href="/index">
+	<img src = "https://i.imgur.com/P2GI5Aw.png" 
+	alt="Welcome" style ="width:300px; height:100px;"/>
+</a>
+
 <h3>Hello ${name}, 
 please type in search word(s), 
 then choose if you want to 'AND' or 'OR' the words, 

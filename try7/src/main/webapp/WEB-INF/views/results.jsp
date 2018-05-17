@@ -4,12 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Result</title>
+<link rel="stylesheet" type="text/css" href="FinalProjectStyling418.css">
+<title>Search Results</title>
 </head>
-<body>
-<h3> Here are your results</h3>
+<body class = "body">
+<a href="/index">
+	<img src = "https://i.imgur.com/P2GI5Aw.png" 
+	alt="Welcome" style ="width:300px; height:100px;"/>
+</a>
 
-<input type="reset" value="clear"  /> 
+<h3 id = "underline1"> Search Results </h3>
+
+<div>
+
+<input class = "button" type="reset" value="clear"  /> 
+</div>
 
 </body>
 </html>

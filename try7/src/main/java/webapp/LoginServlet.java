@@ -32,6 +32,9 @@ public class LoginServlet extends HttpServlet {
 		String jpassword = request.getParameter("jpassword");
 		
 		boolean isValid = vuser.isUserValid(jname, jpassword);
+		boolean isAdmin = vuser.isAdmin(jname, jpassword);
+		
+		//if admin then go to admin config page
 		if(isValid) {
 			//first save the user to the session 
 			HttpSession session = request.getSession();
@@ -42,7 +45,14 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("password", jpassword);
 			request.getRequestDispatcher("WEB-INF/views/userui.jsp").forward(request, response);
 		}
-		
+		//if user then go to user page 
+		else if(isAdmin) {
+			//set attributes back to the servlet 
+			request.setAttribute("name", jname);
+			request.setAttribute("password", jpassword);
+			request.getRequestDispatcher("WEB-INF/views/adminui.jsp").forward(request, response);
+		}
+		//if wrong credential go back to login
 		else {
 			request.setAttribute("errorMessage", "Sorry bro, invalid credentials");
 			request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);

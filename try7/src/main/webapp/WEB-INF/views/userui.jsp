@@ -7,13 +7,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome to CustomSD</title>
+<title>CustomDataSearch</title>
 </head>
 <body>
-<h2>Hello ${name}, 
+<h3>Hello ${name}, 
 please type in search word(s), 
 then choose if you want to 'AND' or 'OR' the words, 
-then click search.</h2>
+then click search.</h3>
 
 <h3>Connection status </h3>
 <% 
@@ -44,7 +44,7 @@ connection.close();
 catch(Exception ex){
 %>
 </font>
-<font size="+1" color="red"></b>
+<font size="+1" color="red"><br/>
 <%
 out.println("Unable to connect to database.");
 }
@@ -55,22 +55,17 @@ out.println("Unable to connect to database.");
 	Please type in keywords and search
   	<form action="/userui" method="post"> 
   		<p> <font color="red"> ${errorMessage}</font></p>
+  		<p> <font color="red"> ${errorNotAllFilled}</font></p>
+  		<p> <font color="red"> ${errorAddorOR}</font></p>
   		
     	Field1 <input type="text" name="f1"/> 
     	Field2 <input type="text" name="f2"/> 
-    	Field3 <input type="text" name="f3"/> <br>
-    	<input type="button" value="AND" id="AND"/>
-    	<input type="button" value="OR" id="OR"/> </br>
+    	Field3 <input type="text" name="f3"/> <br/>
+    	<input type="button" name="add" value="AND" />
+    	<input type="button" name="or" value="OR" /> <br/>
     	<input type="submit" value="Search"/>
   	</form>
  </div>
-  	<%
-	//String x = request.getParameter("AND");
-   //if("AND".equals(x))
-   //{
-	   
-	  %> <p> Feedback: You have clicked 'AND'/'OR'</p> 
-<% //} %>
 	
 </body>
 </html>
